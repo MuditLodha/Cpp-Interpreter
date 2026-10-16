@@ -1,0 +1,63 @@
+// test everything we've built so far
+
+// --- Ch8: variables and assignment ---
+var a = 10;
+var b = 20;
+print a + b;           // 30
+
+// --- Ch8: blocks and scoping ---
+{
+    var a = 99;
+    print a;           // 99  (inner a)
+}
+print a           // 10  (outer a unchanged)
+
+// --- Ch9: if / else ---
+if (a > 5) {
+    print "a is big";
+} else {
+    print "a is small";
+}
+
+// --- Ch9: and / or (short-circuit) ---
+print true or false;   // true
+print false and true;  // false
+
+// --- Ch9: while loop ---
+var i = 0;
+while (i < 3) {
+    print i;
+    i = i + 1;
+}
+
+// --- Ch9: for loop (desugars to while) ---
+for (var j = 0; j < 3; j = j + 1) {
+    print j;
+}
+
+// --- Ch10: function declaration and call ---
+fun add(x, y) {
+    return x + y;
+}
+print add(3, 4);       // 7
+
+// --- Ch10: recursion ---
+fun fib(n) {
+    if (n <= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+print fib(10);         // 55
+
+// --- Ch10: closures ---
+fun makeCounter() {
+    var count = 0;
+    fun inc() {
+        count = count + 1;
+        return count;
+    }
+    return inc;
+}
+var counter = makeCounter();
+print counter();       // 1
+print counter();       // 2
+print counter();       // 3

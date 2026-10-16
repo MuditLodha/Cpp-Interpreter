@@ -1,0 +1,20 @@
+# Build output
+build/
+*.exe
+*.obj
+*.o
+*.pdb
+*.ilk
+*.dll
+*.lib
+
+# IDE settings
+.vs/
+.vscode/
+*.user
+*.suo
+
+# OS files
+.DS_Store
+Thumbs.db
+docs/Building_jlox_in_Cpp.pdf

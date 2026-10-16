@@ -1,0 +1,51 @@
+// sample.lox
+
+// 1. Variables and Math
+var greeting = "Hello, Compiler World!";
+print greeting;
+
+var a = 10;
+var b = 5;
+print "10 + 5 =";
+print a + b;
+
+// 2. Control Flow (If / Else)
+var time = 14;
+if (time < 12) {
+    print "Good morning!";
+} else if (time < 18) {
+    print "Good afternoon!";
+} else {
+    print "Good evening!";
+}
+
+// 3. Loops (For and While)
+print "Counting to 3 with a for loop:";
+for (var i = 1; i <= 3; i = i + 1) {
+    print i;
+}
+
+// 4. Functions and Recursion
+fun fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 2) + fibonacci(n - 1);
+}
+
+print "Fibonacci of 6 is:";
+print fibonacci(6); // Should be 8
+
+// 5. Closures (Functions returning functions)
+fun makeCounter() {
+    var count = 0;
+    fun increment() {
+        count = count + 1;
+        return count;
+    }
+    return increment;
+}
+
+print "Testing closures:";
+var counter = makeCounter();
+print counter(); // 1
+print counter(); // 2
+print counter(); // 3
